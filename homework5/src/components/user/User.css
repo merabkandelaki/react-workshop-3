@@ -1,0 +1,29 @@
+.user-item {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li, h3 {
+    font-size: 0.9375rem;
+    color: red;
+}
+
+span {
+    font-size: 0.9375rem;
+    color: white;
+    font-weight: 700;
+}
+
+.pictures {
+    display: flex;
+    align-items: center;
+    gap: 0.4375rem;
+}
