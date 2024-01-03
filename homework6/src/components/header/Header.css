@@ -1,0 +1,34 @@
+.header {
+    padding: 30px 125px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #36384E;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.left-side svg {
+    font-size: 35px;
+    color: white;
+}
+
+.left-side span {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+.right-side a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+}

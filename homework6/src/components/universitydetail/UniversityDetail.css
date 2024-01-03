@@ -1,0 +1,39 @@
+.university-detail {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgb(40, 3, 75);
+    height: 80vh;
+}
+
+.detail-items {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.detail-items a:not(:last-child){
+    margin-right: 15px;
+}
+
+.university-detail h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: aliceblue;
+}
+
+.detail-items p {
+    font-size: 18px;
+    font-weight: 500;
+    color: aliceblue;
+}
+
+.detail-items a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: aliceblue;
+}
