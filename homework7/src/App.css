@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  padding: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: rgb(29, 1, 53);
+  color: white;
+}
+
+.container h1 {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+li span {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+li button {
+  margin-left: 30px;
+  padding: 5px 12px;
+  border-radius: 15px;
+  border: none;
+  background-color: red;
+  color: aliceblue;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: black;
+  padding: 50px;
+  border-radius: 8px;
+  color: aliceblue;
+}
+
+.modal p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.modal-buttons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.delete {
+  padding: 5px 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: green;
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.close {
+  padding: 5px 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
