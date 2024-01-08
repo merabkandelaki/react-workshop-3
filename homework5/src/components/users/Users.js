@@ -63,78 +63,16 @@ const Users = () => {
         {isloading && <PacmanLoader color="rgba(255, 0, 0, 0.877)" size={50} />}
         <h1>Users page</h1>
         <div className="checkbox-users">
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.firstname}
-              onChange={() => handleCheckboxChange("firstname")}
-            />
-            Show firstname
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.lastname}
-              onChange={() => handleCheckboxChange("lastname")}
-            />
-            Show lastname
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.city}
-              onChange={() => handleCheckboxChange("city")}
-            />
-            Show city
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.country}
-              onChange={() => handleCheckboxChange("country")}
-            />
-            Show country
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.email}
-              onChange={() => handleCheckboxChange("email")}
-            />{" "}
-            Show email
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.username}
-              onChange={() => handleCheckboxChange("username")}
-            />{" "}
-            Show username
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.birddate}
-              onChange={() => handleCheckboxChange("birddate")}
-            />
-            Show birddate
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.phone}
-              onChange={() => handleCheckboxChange("phone")}
-            />
-            Show phone
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedFilters.images}
-              onChange={() => handleCheckboxChange("images")}
-            />
-            Show images
-          </label>
+          {Object.entries(selectedFilters).map((filter) => (
+            <label>
+              <input
+                type="checkbox"
+                checked={filter[1]}
+                onChange={() => handleCheckboxChange(filter[0])}
+              />
+              Show {filter[0]}
+            </label>
+          ))}
         </div>
         <div className="container">
           {users.map((user, key) => (
