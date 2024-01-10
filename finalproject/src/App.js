@@ -27,11 +27,11 @@ const App = () => {
   console.log(movies);
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>List of Movies</h1>
-      <div>
+      <div className="movies">
         {movies.map((movie, key) => (
-          <Movie key={key} title={movie.title}/>
+          <Movie key={key} image={movie.image} rating={movie.rating}/>
         ))}
       </div>
     </div>
