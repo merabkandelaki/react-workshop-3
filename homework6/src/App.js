@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
-import UniversityList from "./components/universitylist/UniversityList";
-import UniversityDetail from "./components/universitydetail/UniversityDetail";
+import UniversityList from "./pages/universitylist/UniversityList";
+import UniversityDetail from "./pages/universitydetail/UniversityDetail";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import "./App.css";
+import appRoutes from "../src/constants/routes";
+import NotFound from "./pages/not-found/NotFound";
 
 function App() {
   return (
@@ -12,9 +14,17 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/universities/:country" element={<UniversityList />} />
-          <Route path="/university/:name" element={<UniversityDetail />} />
+          <Route path={appRoutes.home} element={<Home />} />
+          <Route
+            path={appRoutes.universitiesCountry}
+            element={<UniversityList />}
+          />
+          <Route
+            path={appRoutes.universityName}
+            element={<UniversityDetail />}
+          />
+          <Route path={appRoutes.customError} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>

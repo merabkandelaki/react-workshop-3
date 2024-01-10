@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { PacmanLoader } from "react-spinners";
-import "../universitylist/UniversityList.css";
+import appRoutes from "../../constants/routes";
+import "./UniversityList.css";
 
 const UniversityList = () => {
   const { country } = useParams();
@@ -31,11 +32,7 @@ const UniversityList = () => {
   }, [country]);
 
   if (error) {
-    return (
-      <div>
-        <h1>Error happened</h1>
-      </div>
-    );
+    return <Navigate to={appRoutes.customError}>{error}</Navigate>;
   }
 
   return (

@@ -1,0 +1,8 @@
+.not-found {
+    height: 100vh;
+    margin-top: 100px;
+}
+
+.not-found h1 {
+    text-align: center;
+}

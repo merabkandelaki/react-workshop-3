@@ -1,0 +1,8 @@
+.custom-error {
+    height: 100vh;
+    margin-top: 100px;
+}
+
+.custom-error h1 {
+    text-align: center;
+}
