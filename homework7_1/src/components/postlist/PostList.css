@@ -1,0 +1,19 @@
+.posts {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: darkblue;
+    color: white;   
+}
+
+
+.posts h1 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.posts ol{
+    font-size: 19px;
+    font-weight: 500;
+}

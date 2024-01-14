@@ -1,0 +1,16 @@
+.post {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.post button {
+    padding: 5px 18px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
