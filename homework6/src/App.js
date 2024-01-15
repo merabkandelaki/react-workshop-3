@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import "./App.css";
 import appRoutes from "../src/constants/routes";
 import NotFound from "./pages/not-found/NotFound";
+import CustomError from "./pages/custom-error/CustomError";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             path={appRoutes.universityName}
             element={<UniversityDetail />}
           />
-          <Route path={appRoutes.customError} />
+          <Route path={appRoutes.customError} element={<CustomError />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
