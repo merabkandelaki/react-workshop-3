@@ -1,0 +1,100 @@
+.footer {
+    padding: 15px 50px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: #020203;
+}
+
+.top-sides {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.top-left-side h2 {
+    font-size: 19px;
+    color: white;
+    font-weight: 700;
+}
+
+.top-left-side p {
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+}
+
+.top-right-side {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.top-right-side input {
+    padding: 10px 5px;
+    border: 2px solid #FFF;
+    border-radius: 4px;
+    background-color: #000;
+    font-size: 14px;
+    font-weight: normal;
+    color: white;
+}
+
+.top-right-side button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.line img {
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.bottom-sides {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: white;
+    cursor: pointer;
+}
+
+.facebook, .twitter, .instagram {
+    width: 22px;
+    height: 22px;
+}
+
+.payment {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.payment img {
+    width: 34px;
+    height: 22px;
+}
+
+.bottom-sides-right span {
+    font-size: 12px;
+    color: white;
+    font-weight: normal;
+}
