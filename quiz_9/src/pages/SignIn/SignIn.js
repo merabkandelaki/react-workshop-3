@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 
 const SignIn = () => {
-  const { login } = useUserContext();
+  const { login, setIsUserLoggedIn } = useUserContext();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +16,7 @@ const SignIn = () => {
   const handleLogin = () => {
     if (email === "random@gmail.com" && password === "random123") {
       login({ email, password });
+      setIsUserLoggedIn(true);
       navigate("/products");
     } else {
       alert("Wrong credentials!!!");

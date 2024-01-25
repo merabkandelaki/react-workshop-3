@@ -4,8 +4,11 @@ import "../Cart/Cart.css";
 
 const Cart = () => {
   const { state } = useProductContext();
+  let grandTotal = 0;
   const calculateTotal = (product) => {
-    return product.amount * product.price;
+    const result = product.amount * product.price;
+    grandTotal += result;
+    return result;
   };
 
   return (
@@ -24,6 +27,7 @@ const Cart = () => {
           </div>
         ))}
       </div>
+      <h4 className="grand-total">Grand Total Price: {grandTotal} $</h4>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const ProductList = () => {
       try {
         const response = await axios.get(
           `https://dummyjson.com/products?limit=10&skip=${
-            (state.page - 1) * 10
+            (state.currentPage - 1) * 10
           }`
         );
         const formattedArr = response?.data?.products?.map((item) => {
@@ -22,20 +22,31 @@ const ProductList = () => {
           };
         });
         response.data.products = formattedArr;
-        dispatch({ type: "SET_PRODUCTS", payload: response.data });
+        const total = 100;
+        dispatch({
+          type: "SET_PRODUCTS",
+          payload: response.data,
+          total,
+          limit: 100,
+        });
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
     fetchProducts();
-  }, [state.page, dispatch]);
+  }, [state.currentPage, dispatch]);
+
+  const handlePageClick = (page) => {
+    dispatch({ type: "SET_CURRENT_PAGE", payload: page });
+  };
 
   const handleNextPage = () => {
-    dispatch({ type: "SET_PAGE", payload: state.page + 1 });
+    dispatch({ type: "SET_CURRENT_PAGE", payload: (state.currentPage += 1) });
   };
 
   const handlePrevPage = () => {
-    dispatch({ type: "SET_PAGE", payload: Math.max(state.page - 1, 1) });
+    dispatch({ type: "SET_CURRENT_PAGE", payload: (state.currentPage -= 1) });
   };
 
   return (
@@ -48,12 +59,38 @@ const ProductList = () => {
           <Product key={product?.id} product={product} />
         ))}
       </div>
-      <div className="buttons">
-        <button onClick={handlePrevPage} disabled={state.page === 1}>
+      <div className="pagination">
+        <button
+          className="prev-page"
+          onClick={handlePrevPage}
+          disabled={state.currentPage === 1}
+        >
           Previous Page
         </button>
-        <span>Page {state.page}</span>
-        <button onClick={handleNextPage}>Next Page</button>
+        <div className="page-numbers">
+          {Array.from(
+            { length: state.totalPages },
+            (_, index) => index + 1
+          ).map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePageClick(page)}
+              style={{
+                marginRight: "5px",
+                color: page === state.currentPage ? "red" : "black",
+              }}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+        <button
+          className="next-page"
+          onClick={handleNextPage}
+          disabled={state.currentPage === state.products?.limit}
+        >
+          Next Page
+        </button>
       </div>
     </div>
   );

@@ -11,22 +11,24 @@
 }
 
 .cart-box {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 35px;
 }
 
 .cart-box-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    overflow-x: hidden;
+    gap: 15px;
+   
 }
 
 .cart-box-item img {
+    height: 290px;
+    width: 310px;
     border: none;
-    border-radius: 50px;
+    border-radius: 19px;
 }
 
 .cart-box-item-properties {
@@ -38,4 +40,10 @@
 .cart-box-item-properties span {
     font-size: 15px;
     font-weight: 500;
+}
+
+.grand-total {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
 }

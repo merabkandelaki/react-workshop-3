@@ -2,9 +2,10 @@ import React, { createContext, useContext, useReducer } from "react";
 
 const initialState = {
   products: [],
-  page: 1,
   cart: [],
   totalAmount: 0,
+  totalPages: 0,
+  currentPage: 1,
 };
 
 const getProductsAmount = (state) => {
@@ -22,9 +23,13 @@ const ProductContext = createContext();
 const productReducer = (state, action) => {
   switch (action.type) {
     case "SET_PRODUCTS":
-      return { ...state, products: action.payload };
-    case "SET_PAGE":
-      return { ...state, page: action.payload };
+      return {
+        ...state,
+        products: action.payload,
+        totalPages: Math.ceil(action.payload.total / action.payload.limit),
+      };
+    case "SET_CURRENT_PAGE":
+      return { ...state, currentPage: action.payload };
     case "ADD_TO_CART":
       return { ...state, cart: action.payload };
     case "GET_TOTAL_AMOUNT":
